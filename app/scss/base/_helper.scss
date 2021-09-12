@@ -1,0 +1,28 @@
+@use '../util/' as *;
+
+.container {
+  width: 100%;
+  max-width: 65.75rem;
+  margin: 0 auto;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  backdrop-filter: blur(0.125rem);
+  transition: all 350ms ease-in-out;
+
+  @include breakpoint-down(small) {
+    &.overlay-open {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,128 @@
+@use '../util/' as *;
+
+.hero {
+  position: relative;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+
+    @include breakpoint-up(medium) {
+      flex-direction: row;
+    }
+  }
+  &__carousel {
+    display: flex;
+
+    position: relative;
+
+    @include breakpoint-up(medium) {
+      flex: 1 0 50%;
+    }
+
+    &__image {
+      overflow: hidden;
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: max-content;
+      height: 23rem;
+
+      picture {
+        grid-area: 1 / 2 / 1 / 2;
+      }
+      @include breakpoint-up(medium) {
+        height: 60vh;
+        min-height: 33rem;
+      }
+
+      &--img {
+        height: 23rem;
+        width: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transform: scale(1.5);
+        transition: all 1s;
+
+        @include breakpoint-up(medium) {
+          height: 60vh;
+          min-height: 33rem;
+        }
+
+        &.active {
+          display: block;
+          opacity: 1;
+          transform: scale(1);
+          transition: all 1s;
+        }
+      }
+    }
+    &__button {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include breakpoint-up(medium) {
+        right: rem(-160);
+      }
+    }
+  }
+
+  &__text {
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 1s ease;
+    &--transition {
+      opacity: 0;
+    }
+    @include breakpoint-up(medium) {
+      padding: rem(93) 4vw rem(93) 6.7vw;
+      flex: 1 0 27rem;
+    }
+    @include breakpoint-down(small) {
+      padding: rem(67) rem(35);
+    }
+  }
+}
+
+.about {
+  position: relative;
+
+  &__container {
+    display: grid;
+
+    max-width: 100%;
+
+    @include breakpoint-up(medium) {
+      grid-template-columns: 1fr rem(355) 1fr;
+      grid-template-rows: rem(254);
+    }
+
+    @include breakpoint-up(large) {
+      grid-template-columns: 1fr rem(594) 1fr;
+      grid-template-rows: rem(264);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: rem(39) rem(36);
+  }
+}

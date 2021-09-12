@@ -1,0 +1,45 @@
+@use '../util/' as *;
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-Spartan);
+}
+
+.heading {
+  color: var(--black);
+
+  &--xxl {
+    font-size: clamp(1.6875rem, 5vw, 2.25rem);
+    font-weight: var(--font-semiBold);
+    line-height: rem(41);
+    margin-bottom: rem(12);
+    transition: all 0.5s ease;
+
+    @include breakpoint-up(medium) {
+      line-height: rem(46);
+      margin-bottom: rem(23);
+    }
+  }
+
+  &--xl {
+    font-size: rem(13);
+    font-weight: var(--font-Bold);
+    letter-spacing: rem(5);
+    margin-bottom: rem(11);
+  }
+}
+
+.paragraph {
+  color: var(--darkGray);
+  font-size: rem(12);
+
+  &--hero {
+    line-height: rem(22);
+  }
+
+  &--about {
+    line-height: rem(20);
+  }
+}

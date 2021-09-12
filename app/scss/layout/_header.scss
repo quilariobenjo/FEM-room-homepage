@@ -1,0 +1,101 @@
+@use '../util/' as *;
+
+.header {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: rem(100);
+  z-index: 999;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: rem(100);
+    max-width: rem(1250);
+    background-color: transparent;
+
+    @include breakpoint-up(medium) {
+      justify-content: flex-start;
+      padding: 4rem 1rem;
+    }
+  }
+  &__logo {
+    @include focus(var(--white));
+  }
+  &__nav {
+    position: absolute;
+    width: 100%;
+    top: rem(-1000);
+    transition: all 350ms ease-in;
+
+    @include breakpoint-up(medium) {
+      top: 0;
+      background: transparent;
+      position: initial;
+      order: 1;
+      width: 30%;
+    }
+    @include breakpoint-down(small) {
+      &.header__nav--active {
+        top: 0;
+        background-color: var(--white);
+      }
+    }
+
+    &__link {
+      position: relative;
+      color: var(--black);
+      font-family: var(--font-Spartan);
+      font-weight: var(--font-semiBold);
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: rem(-5);
+        right: 0;
+        height: rem(2);
+        width: 100%;
+        background-color: var(--white);
+        transform: scale(0);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 350ms ease;
+      }
+
+      @include breakpoint-up(medium) {
+        color: var(--white);
+        @include focus(var(--white));
+        &:hover {
+          &::before {
+            opacity: 1;
+            transform: scale(1);
+            visibility: visible;
+          }
+        }
+      }
+    }
+
+    &__list {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      list-style: none;
+      height: rem(90);
+
+      @include breakpoint-up(medium) {
+        justify-content: flex-start;
+        margin-left: rem(52);
+      }
+    }
+
+    &__list--item:not(:last-of-type) {
+      margin-right: rem(31);
+
+      @include breakpoint-down(small) {
+        margin-right: rem(12);
+      }
+    }
+  }
+}

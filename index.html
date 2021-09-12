@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Room homepage</title>
+    <link rel="stylesheet" href="dist/style.css" />
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <header class="header">
+      <div class="header__container container">
+        <button
+          class="btn btn--menu"
+          aria-label="menu toggle"
+          aria-pressed="false"
+          aria-expanded="false"
+        >
+          <img src="./images/icon-hamburger.svg" alt="menu toggle" class="menu-icon" />
+        </button>
+        <nav class="header__nav">
+          <ul class="header__nav__list">
+            <li class="header__nav__list--item">
+              <a href="#" class="header__nav__link">home</a>
+            </li>
+            <li class="header__nav__list--item">
+              <a href="#" class="header__nav__link">shop</a>
+            </li>
+            <li class="header__nav__list--item">
+              <a href="#" class="header__nav__link">about</a>
+            </li>
+            <li class="header__nav__list--item">
+              <a href="#" class="header__nav__link">contact</a>
+            </li>
+          </ul>
+        </nav>
+        <a href="#" class="header__logo"
+          ><img src="./images/logo.svg" alt="room homepage"
+        /></a>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero__container container">
+          <div class="hero__carousel">
+            <div class="hero__carousel__image">
+              <picture>
+                <source
+                  media="(max-width: 599px)"
+                  srcset="./images/mobile-image-hero-1.jpg"
+                />
+                <source
+                  media="(min-width: 600px)"
+                  srcset="./images/desktop-image-hero-1.jpg"
+                />
+                <img
+                  src="./images/desktop-image-hero-1.jpg"
+                  alt="furniture"
+                  class="hero__carousel__image--img active"
+                />
+              </picture>
+              <picture>
+                <source
+                  media="(max-width: 599px)"
+                  srcset="./images/mobile-image-hero-2.jpg"
+                />
+                <source
+                  media="(min-width: 600px)"
+                  srcset="./images/desktop-image-hero-2.jpg"
+                />
+                <img
+                  src="./images/desktop-image-hero-2.jpg"
+                  alt="furniture"
+                  class="hero__carousel__image--img"
+                />
+              </picture>
+              <picture>
+                <source
+                  media="(max-width: 599px)"
+                  srcset="./images/mobile-image-hero-3.jpg"
+                />
+                <source
+                  media="(min-width: 600px)"
+                  srcset="./images/desktop-image-hero-3.jpg"
+                />
+                <img
+                  src="./images/desktop-image-hero-3.jpg"
+                  alt="furniture"
+                  class="hero__carousel__image--img"
+                />
+              </picture>
+            </div>
+            <div class="hero__carousel__button">
+              <button class="btn btn--prev" aria-label="arrow left">
+                <img src="./images/icon-angle-left.svg" alt="arrow left" />
+              </button>
+              <button class="btn btn--next" aria-label="arrow right">
+                <img src="./images/icon-angle-right.svg" alt="arrow right" />
+              </button>
+            </div>
+          </div>
+          <div class="hero__text">
+            <h1 class="heading heading--xxl heading-change">
+              Discover innovative ways to decorate
+            </h1>
+            <p class="paragraph paragraph--hero paragraph-change">
+              We provide unmatched quality, comfort, and style for property owners across
+              the country. Our experts combine form and function in bringing your vision
+              to life. Create a room in your own style with our collection and make your
+              property a reflection of you and what you love.
+            </p>
+            <a href="#" class="btn btn--black">
+              <span class="shopNow__text">SHOP NOW</span>
+              <span class="showNow__icon">
+                <svg width="40" height="12" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z"
+                    fill="#000"
+                    fill-rule="nonzero"
+                  />
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section class="about">
+        <div class="about__container container">
+          <img
+            src="./images/image-about-dark.jpg"
+            class="about__image"
+            alt="dark furniture"
+          />
+          <div class="about__text">
+            <h2 class="heading heading--xl">ABOUT OUR FURNITURE</h2>
+            <p class="paragraph paragraph--about">
+              Our multifunctional collection blends design and function to suit your
+              individual taste. Make each room unique, or pick a cohesive theme that best
+              express your interests and what inspires you. Find the furniture pieces you
+              need, from traditional to contemporary styles or anything in between.
+              Product specialists are available to help you create your dream space.
+            </p>
+          </div>
+          <img
+            src="./images/image-about-light.jpg"
+            class="about__image"
+            alt="light furniture"
+          />
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Benjo Quilario</a>.
+      </div>
+    </footer>
+    <script src="./dist/script.js"></script>
+  </body>
+</html>

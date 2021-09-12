@@ -1,0 +1,43 @@
+@use '../util/' as *;
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: rem(12);
+  line-height: 1.3;
+  font-family: var(--font-Spartan);
+  overflow-x: hidden;
+  min-height: 100vh;
+
+  @include breakpoint-down(small) {
+    &.no-scroll {
+      overflow: hidden;
+    }
+  }
+}
+
+a,
+a:active,
+a:visited {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}

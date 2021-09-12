@@ -1,0 +1,76 @@
+@use '../util/' as *;
+
+.btn {
+  position: relative;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+
+  &--menu {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: rem(39);
+    left: rem(30);
+    z-index: 2;
+
+    @include breakpoint-up(medium) {
+      display: none;
+    }
+    @include breakpoint-down(small) {
+      left: rem(21);
+    }
+  }
+
+  &--next,
+  &--prev {
+    background-color: var(--black);
+    height: 4rem;
+    width: 4rem;
+    transition: all 0.5s;
+
+    &:focus {
+      outline: none;
+      transform: scale(1.05);
+    }
+
+    &:hover {
+      background-color: var(--veryDarkGray);
+    }
+
+    &:focus-visible {
+      outline: rem(3) dashed var(--darkGray);
+      outline-offset: rem(2);
+    }
+
+    @include breakpoint-up(medium) {
+      height: 5rem;
+      width: 5rem;
+    }
+  }
+
+  &--black {
+    align-self: flex-start;
+    margin-top: rem(20);
+    @include focus(var(--black));
+    &:hover {
+      opacity: 0.5;
+
+      .shopNow__text {
+        margin-right: 1rem;
+      }
+    }
+
+    .shopNow__text {
+      font-size: rem(12);
+      letter-spacing: rem(12);
+      color: var(--black);
+      line-height: rem(20);
+      margin-right: 2rem;
+      font-weight: var(--font-semiBold);
+      transition: all 0.5s ease;
+    }
+  }
+}
